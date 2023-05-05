@@ -52,7 +52,7 @@ int is_valid(Node* n){
   for(int i=0;i<9;i++){
     for(int j=0;j<9;j++){
       
-      printf("%d",n->sudo[j][i]);
+      printf("%d",n->sudo[i][j]);
       if(lista[n->sudo[i][j]]==0){
         lista[n->sudo[i][j]]=1;
       }
@@ -60,7 +60,7 @@ int is_valid(Node* n){
         aux=1;
         break;
       }
-      if(i!=0 && (i+1)%3==0){
+      if(j!=0 && (j+1)%3==0){
         break;
       }
     }

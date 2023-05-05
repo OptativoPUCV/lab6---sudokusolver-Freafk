@@ -67,14 +67,13 @@ List* get_adj_nodes(Node* n){
 
     }
     
-    for(int aux=1;aux<10;aux++){
+    for( aux=1;aux<10;aux++){
       Node *nodo=copy(n);
       nodo->sudo[i][j]=aux;
       
       pushBack(list, nodo);  
     }
-    int a=get_size(list);
-    printf("%d",a);
+  
     return list;
 }
 

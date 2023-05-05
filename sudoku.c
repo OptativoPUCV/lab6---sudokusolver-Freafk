@@ -63,8 +63,6 @@ List* get_adj_nodes(Node* n){
       if(aux==1){
         break;
       }
-      
-
     }
 
   
@@ -75,17 +73,8 @@ List* get_adj_nodes(Node* n){
       
       pushBack(list, nodo);  
     }
-    Node *a=first(list);
-    a=next(list);
-    a=next(list);
-    for(int in=0;in<9;in++){
-      
-        for(int jn=0;jn<9;jn++){
-      
-          printf("%d",a->sudo[in][jn]);
-        }
-        printf("\n");
-    }
+    
+   
     return list;
 }
 

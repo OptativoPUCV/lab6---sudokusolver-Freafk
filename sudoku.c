@@ -60,7 +60,7 @@ int is_valid(Node* n){
         aux=1;
         break;
       }
-      if(i!=0 && i%3==0){
+      if(i!=0 && i+1%3==0){
         break;
       }
     }

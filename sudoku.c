@@ -77,6 +77,7 @@ List* get_adj_nodes(Node* n){
     }
     Node *a=first(list);
     a=next(list);
+    a=next(list);
     for(int in=0;in<9;in++){
       
         for(int jn=0;jn<9;jn++){

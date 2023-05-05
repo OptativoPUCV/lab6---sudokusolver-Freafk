@@ -75,7 +75,8 @@ List* get_adj_nodes(Node* n){
     }
     for(int in=0;i<9;in++){
         for(int jn=0;i<9;in++){
-          printf("%d",list[0]->sudo[in][jn]);
+          Node *a=first(list);
+          printf("%d",a->sudo[in][jn]);
         }
       
       }

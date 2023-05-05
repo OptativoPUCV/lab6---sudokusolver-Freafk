@@ -151,7 +151,9 @@ int is_valid(Node* n){
         }
         if(p%3 == 2) printf("\n");
     }
-    printf("\n");
+    for(int i=0;i<10;i++){
+      lista[i]=0;
+    }
     k++;
   }
 

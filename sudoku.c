@@ -69,7 +69,8 @@ List* get_adj_nodes(Node* n){
 
   
     for( aux=1;aux<10;aux++){
-      Node *nodo=copy(n);
+      Node *nodo=malloc(sizeof(Node));
+      nodo=copy(n);
       nodo->sudo[i][j]=aux;
       
       pushBack(list, nodo);  

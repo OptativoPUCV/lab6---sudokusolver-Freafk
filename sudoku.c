@@ -154,6 +154,7 @@ int is_valid(Node* n){
     for(int i=0;i<10;i++){
       lista[i]=0;
     }
+    printf("\n");
     k++;
   }
 

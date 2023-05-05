@@ -73,13 +73,8 @@ List* get_adj_nodes(Node* n){
       
       pushBack(list, nodo);  
     }
-    for(int in=0;i<9;in++){
-        for(int jn=0;i<9;in++){
-          Node *a=first(list);
-          printf("%d",a->sudo[in][jn]);
-        }
-      printf("\n");
-      }
+    int a=get_size(list);
+    printf("%d",a);
     return list;
 }
 

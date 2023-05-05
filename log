@@ -322,3 +322,15 @@ Fri 05 May 2023 07:05:41 PM UTC:
  tests:  2|4
 total_score: 15/70
 604b51b
+Fri 05 May 2023 07:05:59 PM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:154:5: error: implicit declaration of function ‘pritnf’; did you mean ‘printf’? [-Werror=implicit-function-declaration]
+  154 |     pritnf("\n");
+      |     ^~~~~~
+      |     printf
+cc1: all warnings being treated as errors
+Compilation failed
+40f73f5

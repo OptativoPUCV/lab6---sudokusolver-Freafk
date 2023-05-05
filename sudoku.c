@@ -151,6 +151,7 @@ int is_valid(Node* n){
         }
         if(p%3 == 2) printf("\n");
     }
+    pritnf("\n");
     k++;
   }
 

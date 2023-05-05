@@ -59,10 +59,11 @@ List* get_adj_nodes(Node* n){
           aux=1;
           break;
         }
+      }
       if(aux==1){
         break;
       }
-      }
+      
 
     }
     

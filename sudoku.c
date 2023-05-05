@@ -44,8 +44,34 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+  int *lista=malloc(sizeof(int)*9);
+  for(int i=0;i<9;i++){
+    lista[i]=0;
+  }
+  int aux=0;
+  for(int j=0;j<9;j++){
+    for(int i=0;i<9;i++){
+      
+      
+      if(lista[n->sudo[i][j]]==0){
+        lista[n->sudo[i][j]]=1;
+      }
+      else{
+        aux=1;
+        break;
+      }
+      if(i!=0 && i%3==0){
+        break;
+      }
+    }
+    if(aux==1){
+      return 0;
+    }
+  }
 
-    return 1;
+  
+
+  return 1;
 }
 
 

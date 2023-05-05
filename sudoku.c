@@ -69,7 +69,7 @@ int is_valid(Node* n){
     if(i!=0 && (i+1)%3==0){
       for(int i=0;i<10;i++){
       lista[i]=0;
-    
+      }
     }
     if(aux==1){
       return 0;

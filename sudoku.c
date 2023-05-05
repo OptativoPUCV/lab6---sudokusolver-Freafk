@@ -56,7 +56,7 @@ int is_valid(Node* n){
   for(int i=0;i<10;i++){
     lista[i]=0;
   }
-  int k,aux=0;
+  int k=0,aux=0;
   while(k!=12){
     for(int i=k;i<9;i++){
       for(int j=k;j<3;j++){

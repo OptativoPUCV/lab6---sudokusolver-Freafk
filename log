@@ -268,3 +268,9 @@ sudoku.c:60:10: error: ‘k’ is used uninitialized [-Werror=uninitialized]
 cc1: all warnings being treated as errors
 Compilation failed
 c49263c
+Fri 05 May 2023 06:46:49 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|4
+total_score: 15/70
+76a3520

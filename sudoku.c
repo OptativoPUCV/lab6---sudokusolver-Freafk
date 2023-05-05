@@ -50,7 +50,7 @@ int is_valid(Node* n){
   }
   int aux=0;
   for(int i=0;i<9;i++){
-    for(int j=0;j<9;j++){
+    for(int j=0;j<3;j++){
       
       printf("%d",n->sudo[i][j]);
       if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
@@ -61,9 +61,51 @@ int is_valid(Node* n){
         aux=1;
         break;
       }
-      if(j!=0 && (j+1)%3==0){
+      
+    }
+    printf("\n");
+    if(i!=0 && (i+1)%3==0){
+      for(int i=0;i<10;i++){
+      lista[i]=0;
+      }
+    }
+    if(aux==1){
+      return 0;
+    }
+    for(int j=3;j<6;j++){
+      
+      printf("%d",n->sudo[i][j]);
+      if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
+        lista[n->sudo[i][j]]=1;
+      
+      }
+      else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
+        aux=1;
         break;
       }
+      
+    }
+    printf("\n");
+    if(i!=0 && (i+1)%3==0){
+      for(int i=0;i<10;i++){
+      lista[i]=0;
+      }
+    }
+    if(aux==1){
+      return 0;
+    }
+    for(int j=6;j<9;j++){
+      
+      printf("%d",n->sudo[i][j]);
+      if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
+        lista[n->sudo[i][j]]=1;
+      
+      }
+      else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
+        aux=1;
+        break;
+      }
+      
     }
     printf("\n");
     if(i!=0 && (i+1)%3==0){

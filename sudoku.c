@@ -65,7 +65,7 @@ List* get_adj_nodes(Node* n){
       }
     }
 
-    if(i!=NULL && j!=NULL){
+    if(aux==1){
       
     
       for( aux=1;aux<10;aux++){

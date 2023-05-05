@@ -43,91 +43,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int leerMatriz(Node *n){
-  int *lista=malloc(sizeof(int)*10);
-    for(int i=0;i<10;i++){
-      lista[i]=0;
-  }
-  int aux=0;
-  for(int i=0;i<9;i++){
-      for(int j=0;j<3;j++){
-        
-        printf("%d",n->sudo[i][j]);
-        if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
-          lista[n->sudo[i][j]]=1;
-        
-        }
-        else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
-          aux=1;
-          break;
-        }
-        
-      }
-     
-      if(i!=0 && (i+1)%3==0){
-        for(int i=0;i<10;i++){
-        lista[i]=0;
-        }
-      }
-      if(aux==1){
-        return 0;
-      }
-  }
-  printf("\n");
-  ////
-  for(int i=3;i<9;i++){
-      for(int j=3;j<6;j++){
-        
-        printf("%d",n->sudo[i][j]);
-        if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
-          lista[n->sudo[i][j]]=1;
-        
-        }
-        else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
-          aux=1;
-          break;
-        }
-        
-      }
-     
-      if(i!=3 && (i+1)%3==0){
-        for(int i=0;i<10;i++){
-        lista[i]=0;
-        }
-      }
-      if(aux==1){
-        return 0;
-      }
-  }
-  //////
-  for(int i=6;i<9;i++){
-      for(int j=6;j<9;j++){
-        
-        printf("%d",n->sudo[i][j]);
-        if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
-          lista[n->sudo[i][j]]=1;
-        
-        }
-        else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
-          aux=1;
-          break;
-        }
-        
-      }
-     
-      if(i!=6 && (i+1)%3==0){
-        for(int i=0;i<10;i++){
-        lista[i]=0;
-        }
-      }
-      if(aux==1){
-        return 0;
-      }
-  }
-  
 
-  return 1;
-}
 int is_valid(Node* n){
   int *lista=malloc(sizeof(int)*10);
   int *listaFila=malloc(sizeof(int)*10);
@@ -225,8 +141,9 @@ List* get_adj_nodes(Node* n){
         Node *nodo=createNode();
         nodo=copy(n);
         nodo->sudo[j][i]=aux;
-        
-        pushBack(list, nodo);  
+        if(is_valid(nodo)){
+          pushBack(list, nodo);  
+        }
       }
     }
    
@@ -235,7 +152,17 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    return 0;
+
+  for(int i=0;i<9;i++){
+    for(int j=0;j<0;j++){
+      if(n->sudo[i][j]==0){
+        return 0;
+      }
+        
+    }
+  }
+  
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){

@@ -142,14 +142,14 @@ int is_valid(Node* n){
     for(p=0;p<9;p++){
         int i=3*(k/3) + (p/3) ;
         int j=3*(k%3) + (p%3) ;
-        //printf("%d ",n->sudo[i][j]);
+        printf("%d ",n->sudo[i][j]);
         if(n->sudo[i][j]!=0 && lista[n->sudo[i][j]]==0){
           lista[n->sudo[i][j]]=1;
         }
         if(n->sudo[i][j]!=0 && lista[n->sudo[i][j]]==1){
           return 0;
         }
-        //if(p%3 == 2) printf("\n");
+        if(p%3 == 2) printf("\n");
     }
     k++;
   }

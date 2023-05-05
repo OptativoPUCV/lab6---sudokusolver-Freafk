@@ -44,24 +44,15 @@ void print_node(Node* n){
 }
 
 int leerMatriz(Node *n){
-
-  
-
-  return 1;
-}
-
-
-int is_valid(Node* n){
   int *lista=malloc(sizeof(int)*10);
-  for(int i=0;i<10;i++){
-    lista[i]=0;
+    for(int i=0;i<10;i++){
+      lista[i]=0;
   }
-  int k=0,aux=0;
-  while(k!=12){
-    for(int i=k;i<9;i++){
-      for(int j=k;j<3;j++){
+  int aux=0;
+  for(int i=0;i<9;i++){
+      for(int j=0;j<3;j++){
         
-        printf("%d",n->sudo[i][j]);
+        //printf("%d",n->sudo[i][j]);
         if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
           lista[n->sudo[i][j]]=1;
         
@@ -81,13 +72,72 @@ int is_valid(Node* n){
       if(aux==1){
         return 0;
       }
-      
-    }
-    k+=3;
   }
-
+  ////
+  for(int i=3;i<9;i++){
+      for(int j=3;j<6;j++){
+        
+        //printf("%d",n->sudo[i][j]);
+        if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
+          lista[n->sudo[i][j]]=1;
+        
+        }
+        else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
+          aux=1;
+          break;
+        }
+        
+      }
+     
+      if(i!=3 && (i+1)%3==0){
+        for(int i=0;i<10;i++){
+        lista[i]=0;
+        }
+      }
+      if(aux==1){
+        return 0;
+      }
+  }
+  //////
+  for(int i=6;i<9;i++){
+      for(int j=6;j<9;j++){
+        
+        //printf("%d",n->sudo[i][j]);
+        if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
+          lista[n->sudo[i][j]]=1;
+        
+        }
+        else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
+          aux=1;
+          break;
+        }
+        
+      }
+     
+      if(i!=6 && (i+1)%3==0){
+        for(int i=0;i<10;i++){
+        lista[i]=0;
+        }
+      }
+      if(aux==1){
+        return 0;
+      }
+  }
   
 
+  return 1;
+}
+
+
+int is_valid(Node* n){
+ 
+
+  
+  int a=leerMatriz(n);
+  if(a==0){
+    return 0;
+  }
+  
   return 1;
 }
 

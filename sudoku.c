@@ -149,7 +149,7 @@ int is_valid(Node* n){
         else if(n->sudo[i][j]!=0) {
           return 0;
         }
-        if(p%3 == 2) printf("\n");
+        //if(p%3 == 2) printf("\n");
     }
     for(int i=0;i<10;i++){
       lista[i]=0;

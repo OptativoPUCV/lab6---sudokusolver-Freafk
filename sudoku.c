@@ -65,15 +65,17 @@ List* get_adj_nodes(Node* n){
       }
     }
 
-  
-    for( aux=1;aux<10;aux++){
-      Node *nodo=createNode();
-      nodo=copy(n);
-      nodo->sudo[j][i]=aux;
+    if(i!=NULL && j!=NULL){
       
-      pushBack(list, nodo);  
-    }
     
+      for( aux=1;aux<10;aux++){
+        Node *nodo=createNode();
+        nodo=copy(n);
+        nodo->sudo[j][i]=aux;
+        
+        pushBack(list, nodo);  
+      }
+    }
    
     return list;
 }

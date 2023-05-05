@@ -44,20 +44,20 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int *lista=malloc(sizeof(int)*9);
-  for(int i=0;i<9;i++){
+  int *lista=malloc(sizeof(int)*10);
+  for(int i=0;i<10;i++){
     lista[i]=0;
   }
-  printf("%d",lista[8]);
   int aux=0;
   for(int i=0;i<9;i++){
     for(int j=0;j<9;j++){
       
       printf("%d",n->sudo[i][j]);
-      if(lista[n->sudo[i][j]]==0){
+      if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==0){
         lista[n->sudo[i][j]]=1;
+      
       }
-      else{
+      else if(n->sudo[i][j]!=0  && lista[n->sudo[i][j]]==1){
         aux=1;
         break;
       }

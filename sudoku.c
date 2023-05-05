@@ -192,7 +192,9 @@ int is_valid(Node* n){
     
     k++;
   }
-
+  free(lista);
+  free(listaFila);
+  free(listaColumna);
 
 
   return 1;

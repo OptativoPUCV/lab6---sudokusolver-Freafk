@@ -257,3 +257,14 @@ Fri 05 May 2023 05:43:43 PM UTC:
  tests:  2|4
 total_score: 15/70
 7fd36d8
+Fri 05 May 2023 06:46:36 PM UTC: 
+ sudoku.c | 54 +++++++++++-------------------------------------------
+ 1 file changed, 11 insertions(+), 43 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:60:10: error: ‘k’ is used uninitialized [-Werror=uninitialized]
+   60 |   while(k!=12){
+      |         ~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c49263c

@@ -78,7 +78,7 @@ List* get_adj_nodes(Node* n){
           Node *a=first(list);
           printf("%d",a->sudo[in][jn]);
         }
-      
+      printf("\n");
       }
     return list;
 }

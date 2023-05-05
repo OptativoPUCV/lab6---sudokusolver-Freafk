@@ -48,6 +48,7 @@ int is_valid(Node* n){
   for(int i=0;i<9;i++){
     lista[i]=0;
   }
+  printf("%d",lista[8]);
   int aux=0;
   for(int i=0;i<9;i++){
     for(int j=0;j<9;j++){

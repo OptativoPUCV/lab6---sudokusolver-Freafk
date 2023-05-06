@@ -167,12 +167,14 @@ int is_final(Node* n){
 
 Node* DFS(Node* initial, int* cont){
 
+  
   Stack *nodo=createStack();
   push(nodo, initial);
   cont=0;
   while(get_size(nodo)!=0)
     
     {
+      cont++;
       Node *current=top(nodo);
       pop(nodo);
       if(is_final(current)==1){
@@ -186,7 +188,7 @@ Node* DFS(Node* initial, int* cont){
         
         currentLista=next(listaNodos);
       }
-      cont++;
+    
     }
   free(nodo);
   return NULL;

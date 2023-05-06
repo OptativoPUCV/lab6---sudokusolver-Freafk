@@ -175,7 +175,7 @@ Node* DFS(Node* initial, int* cont){
       
       Node *current=top(nodo);
       pop(nodo);
-      if(is_final(current)==1){
+      if(is_final(current)){
         return current;
       }
       List *listaNodos=get_adj_nodes(current);
@@ -186,7 +186,7 @@ Node* DFS(Node* initial, int* cont){
         
         currentLista=next(listaNodos);
       }
-      
+      cont++;
     }
   free(nodo);
   return NULL;

@@ -531,3 +531,9 @@ sudoku.c:187:3: error: implicit declaration of function ‘freeStack’; did you
 cc1: all warnings being treated as errors
 Compilation failed
 a1b812e
+Sat 06 May 2023 05:43:23 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  7|1
+total_score: 55/70
+6e6282c

@@ -184,7 +184,7 @@ Node* DFS(Node* initial, int* cont) {
       currentLista = next(listaNodos);
     }
   }
-  freeStack(nodo);
+  free(nodo);
   return NULL;
 }
 

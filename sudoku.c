@@ -43,6 +43,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
+
 int is_valid(Node* n){
   int *lista=malloc(sizeof(int)*10);
   int *listaFila=malloc(sizeof(int)*10);
@@ -54,66 +55,66 @@ int is_valid(Node* n){
   }
   int k=0,p;
   while(k<9){
+    
     for(int i=0;i<9;i++){
       for(int j=0;j<9;j++){
         if(n->sudo[i][j]!=0 && listaFila[n->sudo[i][j]]==0){
           listaFila[n->sudo[i][j]]=1;
         }
         else if(n->sudo[i][j]!=0) {
-          free(lista);
-          free(listaFila);
-          free(listaColumna);
           return 0;
         }
       }
-    }
-    for(int i=0;i<9;i++){
+      for(int i=0;i<10;i++){
+        lista[i]=0;
+        listaFila[i]=0;
+        listaColumna[i]=0;
+      }
+  }
+      
+    
+     for(int i=0;i<9;i++){
       for(int j=0;j<9;j++){
         if(n->sudo[j][i]!=0 && listaColumna[n->sudo[j][i]]==0){
           listaColumna[n->sudo[j][i]]=1;
         }
         else if(n->sudo[j][i]!=0) {
-          free(lista);
-          free(listaFila);
-          free(listaColumna);
           return 0;
         }
       }
+       for(int i=0;i<10;i++){
+        lista[i]=0;
+        listaFila[i]=0;
+        listaColumna[i]=0;
+      }
+      
     }
+  
     for(p=0;p<9;p++){
-      int i=3*(k/3) + (p/3) ;
-      int j=3*(k%3) + (p%3) ;
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
         
-      if(n->sudo[i][j]!=0 && lista[n->sudo[i][j]]==0){
-        lista[n->sudo[i][j]]=1;
-      }
-      else if(n->sudo[i][j]!=0) {
-        free(lista);
-        free(listaFila);
-        free(listaColumna);
-        return 0;
-      }
+        if(n->sudo[i][j]!=0 && lista[n->sudo[i][j]]==0){
+          lista[n->sudo[i][j]]=1;
+        }
+        else if(n->sudo[i][j]!=0) {
+          return 0;
+        }
+        
     }
     for(int i=0;i<10;i++){
       lista[i]=0;
     }
+    
     k++;
   }
   free(lista);
   free(listaFila);
   free(listaColumna);
+
+
   return 1;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -134,7 +135,9 @@ List* get_adj_nodes(Node* n){
     }
 
     if(aux==1){
-      for(aux=1;aux<10;aux++){
+      
+    
+      for( aux=1;aux<10;aux++){
         Node *nodo=createNode();
         nodo=copy(n);
         nodo->sudo[j][i]=aux;
@@ -143,31 +146,9 @@ List* get_adj_nodes(Node* n){
         }
       }
     }
+   
     return list;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 int is_final(Node* n){

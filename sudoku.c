@@ -172,8 +172,9 @@ Node* DFS(Node* initial, int* cont){
   
   while(nodo!=NULL)
     {
-      pop(nodo);
+      
       Node *current=top(nodo);
+      pop(nodo);
       if(is_final(current)==1){
         return current;
       }

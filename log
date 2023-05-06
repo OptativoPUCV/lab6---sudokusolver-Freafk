@@ -507,3 +507,15 @@ Sat 06 May 2023 05:40:39 PM UTC:
  tests:  7|1
 total_score: 55/70
 693eb04
+Sat 06 May 2023 05:43:01 PM UTC: 
+ sudoku.c | 20 +++++++-------------
+ 1 file changed, 7 insertions(+), 13 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:176:7: error: implicit declaration of function ‘freeStack’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  176 |       freeStack(nodo);
+      |       ^~~~~~~~~
+      |       createStack
+cc1: all warnings being treated as errors
+Compilation failed
+93bcd0a

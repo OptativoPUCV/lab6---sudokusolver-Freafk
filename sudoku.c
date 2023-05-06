@@ -170,21 +170,18 @@ Node* DFS(Node* initial, int* cont){
   Stack *nodo=createStack();
   push(nodo, initial);
   int *contador=0;
-
-  
   while(get_size(nodo)!=0)
     
     {
       Node *current=top(nodo);
       pop(nodo);
-      
       if(is_final(current)==1){
         return current;
       }
       List *listaNodos=get_adj_nodes(current);
       Node *currentLista=first(listaNodos);
     
-      while(currentLista!=NULL){
+      while(get_size(listaNodos)!=0){
         push(nodo, currentLista);
         
         currentLista=next(listaNodos);

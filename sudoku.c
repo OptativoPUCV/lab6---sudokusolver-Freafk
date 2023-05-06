@@ -170,10 +170,14 @@ Node* DFS(Node* initial, int* cont){
   Stack *nodo=createStack();
   push(nodo, initial);
   int *contador=0;
-  Node *current=top(nodo);
+
   
   while(top(nodo)!=NULL)
+    
     {
+      Node *current=top(nodo);
+      pop(nodo);
+      
       if(is_final(current)==1){
         return current;
       }
@@ -185,8 +189,7 @@ Node* DFS(Node* initial, int* cont){
         
         currentLista=next(listaNodos);
       }
-      current=top(nodo);
-      pop(nodo);
+    
       contador++;
     }
   cont=contador;

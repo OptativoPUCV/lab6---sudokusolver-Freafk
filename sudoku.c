@@ -169,7 +169,7 @@ Node* DFS(Node* initial, int* cont){
 
   Stack *nodo=createStack();
   push(nodo, initial);
-  
+  int *contador=0;
   while(nodo!=NULL)
     {
       
@@ -186,8 +186,9 @@ Node* DFS(Node* initial, int* cont){
         
         currentLista=next(listaNodos);
       }
-      cont++;
+      contador++;
     }
+  cont=contador;
   free(nodo);
   return NULL;
 }

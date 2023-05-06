@@ -537,3 +537,33 @@ Sat 06 May 2023 05:43:23 PM UTC:
  tests:  7|1
 total_score: 55/70
 6e6282c
+Sat 06 May 2023 05:45:00 PM UTC: 
+ sudoku.c | 47 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 46 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c:149:5: error: redefinition of ‘is_valid’
+  149 | int is_valid(Node* n){
+      |     ^~~~~~~~
+sudoku.c:47:5: note: previous definition of ‘is_valid’ with type ‘int(Node *)’
+   47 | int is_valid(Node* n){
+      |     ^~~~~~~~
+sudoku.c: In function ‘is_valid’:
+sudoku.c:191:27: error: expected ‘]’ before ‘int’
+  191 |         lista[n->sudo[i][j
+      |                           ^
+      |                           ]
+......
+  195 | int is_final(Node* n){
+      | ~~~                        
+sudoku.c:191:14: error: statement with no effect [-Werror=unused-value]
+  191 |         lista[n->sudo[i][j
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:262:1: error: expected declaration or statement at end of input
+test.c:262:1: error: expected declaration or statement at end of input
+test.c:262:1: error: expected declaration or statement at end of input
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+cc1: all warnings being treated as errors
+Compilation failed
+b95d8a0

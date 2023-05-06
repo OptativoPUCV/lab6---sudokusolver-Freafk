@@ -181,12 +181,12 @@ Node* DFS(Node* initial, int* cont){
       List *listaNodos=get_adj_nodes(current);
       Node *currentLista=first(listaNodos);
     
-      while(get_size(listaNodos)!=0){
+      while(currentLista!=NULL){
         push(nodo, currentLista);
         
         currentLista=next(listaNodos);
       }
-    
+      free(current);
       contador++;
     }
   cont=contador;

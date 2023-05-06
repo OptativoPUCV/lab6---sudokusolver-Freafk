@@ -153,7 +153,6 @@ List* get_adj_nodes(Node* n){
 
 int is_final(Node* n){
 
-  if(n==NULL)return 1;
   for(int i=0;i<9;i++){
     for(int j=0;j<9;j++){
       if(n->sudo[i][j]==0){
@@ -171,11 +170,10 @@ Node* DFS(Node* initial, int* cont){
   Stack *nodo=createStack();
   push(nodo, initial);
   int *contador=0;
-  while(nodo!=NULL)
+  Node *current=top(nodo);
+  
+  while(current!=NULL)
     {
-      
-      Node *current=top(nodo);
-      pop(nodo);
       if(is_final(current)){
         return current;
       }
@@ -187,6 +185,8 @@ Node* DFS(Node* initial, int* cont){
         
         currentLista=next(listaNodos);
       }
+      current=top(nodo);
+      pop(nodo);
       contador++;
     }
   cont=contador;

@@ -519,3 +519,15 @@ sudoku.c:176:7: error: implicit declaration of function ‘freeStack’; did you
 cc1: all warnings being treated as errors
 Compilation failed
 93bcd0a
+Sat 06 May 2023 05:43:14 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:187:3: error: implicit declaration of function ‘freeStack’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  187 |   freeStack(nodo);
+      |   ^~~~~~~~~
+      |   createStack
+cc1: all warnings being treated as errors
+Compilation failed
+a1b812e

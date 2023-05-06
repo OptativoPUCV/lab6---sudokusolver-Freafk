@@ -173,7 +173,7 @@ Node* DFS(Node* initial, int* cont) {
     Node* current = top(nodo);
     pop(nodo);
     if (is_final(current)) {
-      freeStack(nodo);
+      free(nodo);
       *cont = contador;
       return current;
     }
